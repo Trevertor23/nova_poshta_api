@@ -1,10 +1,10 @@
 <template>
    <div style="margin-left:40%;margin-top:10%">
        <h1>Список відділень (оберіть місто)</h1>
-       <select v-model="dep">
+       <select v-model="dep" v-on:change="checkDeps">
            <option  v-for="city in cities" v-bind:key="city.Ref" v-bind:value="city.Description">{{ city.Description}}</option>
        </select>
-       <br><button v-on:click="checkDeps">Check</button>
+       <br><br>
        <br><select>
            <option  v-for="dep in departments" v-bind:key="dep.CityRef" v-bind:value="dep.Description">{{ dep.Description}}</option>
        </select>
